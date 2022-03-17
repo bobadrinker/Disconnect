@@ -46,5 +46,10 @@ public class PlayerController : MonoBehaviour
         {
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0f);
         }
+
+        if(Mathf.Abs (Input.GetAxisRaw("Horizontal")) > 0.5f && Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.5f)
+        {
+
+        }
     }
 }
