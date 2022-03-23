@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class QuestObject : MonoBehaviour
 {
+    public int questNumber;
+
+    public QuestManager theQM;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,7 @@ public class QuestObject : MonoBehaviour
 
     public void EndQuest()
     {
-
+        theQM.questCompleted[questNumber] = true;
+        gameObject.SetActive(false);
     }
 }
