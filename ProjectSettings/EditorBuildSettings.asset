@@ -9,14 +9,23 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2042c51339ec7834fadcbc82d4daa2ac
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/PrimaryScene.unity
     guid: 3f9883d3bc7de9947a6b39a38fe3b41f
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: 5727ae48abe2a7847af38c4e74c2b14a
   - enabled: 0
+=======
+>>>>>>> Stashed changes
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: 5727ae48abe2a7847af38c4e74c2b14a
+  - enabled: 1
+    path: Assets/Scenes/PauseScene.unity
+    guid: 3f9883d3bc7de9947a6b39a38fe3b41f
   - enabled: 1
     path: Assets/Scenes/house_inside.unity
     guid: 8b617d5191da78049a7b3ea503027280
