@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     private static bool playerExists;
 
+    public bool canMove;
+
     // Start is called before the first frame update
     void Start()
     {

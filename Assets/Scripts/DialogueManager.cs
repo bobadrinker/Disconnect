@@ -10,6 +10,10 @@ public class DialogueManager : MonoBehaviour
 
     public bool dialogueActive;
 
+    bool dismissedThisFrame;
+    int currentLine;
+    PlayerController thePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +27,11 @@ public class DialogueManager : MonoBehaviour
         {
             dBox.SetActive(false);
             dialogueActive = false;
-<<<<<<< Updated upstream
-=======
             dismissedThisFrame = true;
 
             currentLine = 0;
             thePlayer.canMove = true;
->>>>>>> Stashed changes
+
         }
     }
 
@@ -37,15 +39,15 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueActive = true;
         dBox.SetActive(true);
-<<<<<<< Updated upstream
+
         dText.text = dialogue;
-=======
+
         thePlayer.canMove = false;
     }
 
     private void LateUpdate()
     {
         dismissedThisFrame = false;
->>>>>>> Stashed changes
+
     }
 }
