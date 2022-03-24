@@ -25,13 +25,8 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
+        if (dialogueActive && Input.GetKeyUp(KeyCode.Space))
         {
-            //dBox.SetActive(false);
-            //dialogueActive = false;
-
-            dismissedThisFrame = true;
-
             currentLine++;
         }
 
@@ -39,6 +34,8 @@ public class DialogueManager : MonoBehaviour
         {
             dBox.SetActive(false);
             dialogueActive = false;
+
+            dismissedThisFrame = true;
 
             currentLine = 0;
             thePlayer.canMove = true;
@@ -56,14 +53,12 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue()
     {
-        dialogueActive = true;
-        dBox.SetActive(true);
-        thePlayer.canMove = false;
-    }
+        if (!dismissedThisFrame)
+        {
 
-    private void LateUpdate()
-    {
-        dismissedThisFrame = false;
-
+            dialogueActive = true;
+            dBox.SetActive(true);
+            thePlayer.canMove = false;
+        }
     }
 }

@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
             Destroy (gameObject);
         }
 
-        canMove = true;
+        canMove = true; 
     }
 
     // Update is called once per frame

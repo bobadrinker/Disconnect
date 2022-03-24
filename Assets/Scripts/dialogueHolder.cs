@@ -21,7 +21,7 @@ public class dialogueHolder : MonoBehaviour
     {
         if (inRange && Input.GetKeyUp(KeyCode.Space))
         {
-            if (!dMAn.dialogueActive)
+            if (!dMAn.dialogueActive && !dMAn.dismissedThisFrame)
             {
                 dMAn.dialogLines = dialogueLines;
                 dMAn.currentLine = 0;
@@ -43,6 +43,7 @@ public class dialogueHolder : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             inRange = false;
+            dMAn.dismissedThisFrame = false;
         }
     }
 }
