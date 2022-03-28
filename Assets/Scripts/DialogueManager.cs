@@ -41,14 +41,16 @@ public class DialogueManager : MonoBehaviour
             thePlayer.canMove = true;
         }
 
-        dText.text = dialogLines[currentLine];
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(dialogLines[currentLine]));
     }
 
     public void ShowBox(string dialogue)
     {
         dialogueActive = true;
         dBox.SetActive(true);
-        dText.text = dialogue;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(dialogue));
     }
 
     public void ShowDialogue()
@@ -59,6 +61,16 @@ public class DialogueManager : MonoBehaviour
             dialogueActive = true;
             dBox.SetActive(true);
             thePlayer.canMove = false;
+        }
+    }
+
+    IEnumerator TypeSentence (string sentence)
+    {
+        dText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dText.text += letter;
+            yield return null;
         }
     }
 }
