@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour
     private float halfHeight;
     private float halfWidth;
 
+    float nextTimeToSearch = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,12 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (followTarget == null)
+        {
+            FindPlayer();
+            return;
+        }
+
         targetPos = new Vector3(followTarget.transform.position.x, followTarget.transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp (transform.position, targetPos, moveSpeed * Time.deltaTime);
 
@@ -61,5 +69,18 @@ public class CameraController : MonoBehaviour
 
         minBounds = boundBox.bounds.min;
         maxBounds = boundBox.bounds.max;
+    }
+
+    void FindPlayer ()
+    {
+        if (nextTimeToSearch <= Time.time)
+        {
+            GameObject searchResult = GameObject.FindGameObjectWithTag("Player");
+            if (searchResult != null)
+            {
+                followTarget = searchResult;
+            }
+            nextTimeToSearch = Time.time + 0.5f;
+        }
     }
 }
