@@ -26,9 +26,7 @@ public class PlayerHealthManager : MonoBehaviour
     {
         if(playerCurrentHealth <= 0)
         {
-            gameObject.SetActive(false);
-
-            
+            GameManager.KillPlayer(this);
         }
 
         if(flashActive)

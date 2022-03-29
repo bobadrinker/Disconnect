@@ -7,6 +7,9 @@ public class dialogueHolder : MonoBehaviour
     public string dialogue;
     private DialogueManager dMAn;
 
+    public string[] dialogueLines;
+    bool inRange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,17 +19,31 @@ public class dialogueHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (inRange && Input.GetKeyUp(KeyCode.Space))
+        {
+            if (!dMAn.dialogueActive && !dMAn.dismissedThisFrame)
+            {
+                dMAn.dialogLines = dialogueLines;
+                dMAn.currentLine = 0;
+                dMAn.ShowDialogue();
+            }
+        }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.name == "Player")
         {
-            if(Input.GetKeyUp(KeyCode.Space))
-            {
-                dMAn.ShowBox(dialogue);
-            }
+            inRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Player")
+        {
+            inRange = false;
+            dMAn.dismissedThisFrame = false;
         }
     }
 }

@@ -6,11 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     private float currentMoveSpeed;
-    public float diagonalMoveModifier;
+    //public float diagonalMoveModifier;
 
     private Rigidbody2D myRigidbody;
 
+    private Vector2 moveInput;
+
     private static bool playerExists;
+
+    public bool canMove;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +28,20 @@ public class PlayerController : MonoBehaviour
         } else {
             Destroy (gameObject);
         }
+
+        canMove = true; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
+        if(!canMove)
+        {
+            myRigidbody.velocity = Vector2.zero;
+            return;
+        }
+
+        /*if(Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
         {
             //transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f));
             myRigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * currentMoveSpeed, myRigidbody.velocity.y);
@@ -47,15 +59,26 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxisRaw("Vertical") < 0.5f && Input.GetAxisRaw("Vertical") > -0.5f)
         {
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0f);
+        }*/
+
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+
+        if(moveInput != Vector2.zero)
+        {
+            myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+
+        } else
+        {
+            myRigidbody.velocity = Vector2.zero;
         }
 
-        if(Mathf.Abs (Input.GetAxisRaw("Horizontal")) > 0.5f && Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.5f)
+        /*if(Mathf.Abs (Input.GetAxisRaw("Horizontal")) > 0.5f && Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.5f)
         {
             currentMoveSpeed = moveSpeed * diagonalMoveModifier;
         }
         else
         {
             currentMoveSpeed = moveSpeed;
-        }
+        }*/
     }
 }
