@@ -50,7 +50,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueActive = true;
         dBox.SetActive(true);
-        StopAllCoroutines();
+        //StopAllCoroutines();
         StartCoroutine(TypeSentence(dialogue));
     }
 
