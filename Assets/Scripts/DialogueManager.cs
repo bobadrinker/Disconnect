@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     public string[] dialogLines;
     public int currentLine;
+    public float typingSpeed;
 
     private PlayerController thePlayer;
 
@@ -70,7 +71,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(typingSpeed);
         }
     }
 }

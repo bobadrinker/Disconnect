@@ -325,7 +325,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3478694, y: -1.2512882}
+  m_Offset: {x: -0.28031301, y: -1.1597713}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -336,7 +336,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.3792944, y: 2.5204797}
+  m_Size: {x: 4.244182, y: 2.337446}
   m_EdgeRadius: 0
 --- !u!1 &448430846
 GameObject:
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 1436773156}
   transitionTime: 1
-  levelToLoad: SampleScene
+  levelToLoad: test
 --- !u!61 &448430848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 1055431847}
   - component: {fileID: 1055431846}
   m_Layer: 0
-  m_Name: Disconnect bedroom WIP
+  m_Name: Disconnect bedroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,7 +634,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 08aac0321c4acd3469033060ed63839b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e868800cd4406ad449f29d67405dacaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

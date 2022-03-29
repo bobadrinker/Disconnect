@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(spawnDelay);
-
         Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 

@@ -667,6 +667,7 @@ MonoBehaviour:
   - Test2
   - Test3
   currentLine: 0
+  typingSpeed: 0.02
 --- !u!1 &597421819
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,9 +2274,33 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 34783920}
+    - target: {fileID: 1508652313495124362, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: playerMaxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036909767943671440, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: m_Size.y
+      value: 11.997813
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036909767943671440, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.20894623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036909767943671440, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.012600422
+      objectReference: {fileID: 0}
     - target: {fileID: 3208278880330169338, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208278880330169338, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208278880330169338, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 3208278880330169338, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
       propertyPath: m_LocalPosition.x
