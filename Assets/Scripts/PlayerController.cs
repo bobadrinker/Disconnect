@@ -16,9 +16,13 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         myRigidbody = GetComponent<Rigidbody2D>();
 
         if(!playerExists)
@@ -60,6 +64,9 @@ public class PlayerController : MonoBehaviour
         {
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0f);
         }*/
+
+        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
 
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
