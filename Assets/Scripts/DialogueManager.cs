@@ -29,6 +29,9 @@ public class DialogueManager : MonoBehaviour
         if (dialogueActive && Input.GetKeyUp(KeyCode.Space))
         {
             currentLine++;
+            dText.text = "";
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(dialogLines[currentLine]));
         }
 
         if(currentLine >= dialogLines.Length)
@@ -41,16 +44,13 @@ public class DialogueManager : MonoBehaviour
             currentLine = 0;
             thePlayer.canMove = true;
         }
-
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(dialogLines[currentLine]));
     }
 
     public void ShowBox(string dialogue)
     {
         dialogueActive = true;
         dBox.SetActive(true);
-        //StopAllCoroutines();
+        StopAllCoroutines();
         StartCoroutine(TypeSentence(dialogue));
     }
 
@@ -62,6 +62,7 @@ public class DialogueManager : MonoBehaviour
             dialogueActive = true;
             dBox.SetActive(true);
             thePlayer.canMove = false;
+            StartCoroutine(TypeSentence(dialogLines[currentLine]));
         }
     }
 

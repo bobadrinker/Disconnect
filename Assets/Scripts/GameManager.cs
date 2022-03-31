@@ -7,11 +7,15 @@ public class GameManager : MonoBehaviour
     public static GameManager gm;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        if (gm == null)
+        if (gm != null)
         {
-            gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+            Destroy(gameObject);
+        }
+        else
+        {
+            gm = this;
         }
     }
 
@@ -22,10 +26,12 @@ public class GameManager : MonoBehaviour
     public IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(spawnDelay);
-        Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+
+        Transform test = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+        Debug.Log(test.gameObject.name);
     }
 
-    public static void KillPlayer (PlayerHealthManager player)
+    public void KillPlayer (PlayerHealthManager player)
     {
         Destroy(player.gameObject);
         gm.StartCoroutine(gm.RespawnPlayer());

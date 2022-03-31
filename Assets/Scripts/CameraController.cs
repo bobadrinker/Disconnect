@@ -23,7 +23,14 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(!cameraExists)
+        /*if (boundBox == null)
+        {
+            boundBox = FindObjectOfType<Bounds>().GetComponent<BoxCollider2D>();
+            minBounds = boundBox.bounds.min;
+            maxBounds = boundBox.bounds.max;
+        }*/
+
+        if (!cameraExists)
         {
             cameraExists = true;
             DontDestroyOnLoad(transform.gameObject);
@@ -51,7 +58,7 @@ public class CameraController : MonoBehaviour
         targetPos = new Vector3(followTarget.transform.position.x, followTarget.transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp (transform.position, targetPos, moveSpeed * Time.deltaTime);
 
-        if(boundBox == null)
+        if (boundBox == null)
         {
             boundBox = FindObjectOfType<Bounds>().GetComponent<BoxCollider2D>();
             minBounds = boundBox.bounds.min;
