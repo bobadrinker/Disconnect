@@ -1332,6 +1332,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1149508726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7068844886861433642, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+  m_PrefabInstance: {fileID: 5863490895525868727}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149508721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d0d26b56aa2d741806ce61b2fa52d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1259003171 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2487233676553747556, guid: 21b18ac989679b34ab497c4f4d1844f3, type: 3}
@@ -2289,6 +2300,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1508652313495124362, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 1149508726}
     - target: {fileID: 1508652313495124362, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
       propertyPath: spawnPoint
       value: 
