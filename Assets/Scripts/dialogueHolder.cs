@@ -9,6 +9,7 @@ public class dialogueHolder : MonoBehaviour
 
     public string[] dialogueLines;
     bool inRange;
+    public GameObject image;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class dialogueHolder : MonoBehaviour
         {
             if (!dMAn.dialogueActive && !dMAn.dismissedThisFrame)
             {
+                dMAn.image = image;
                 dMAn.dialogLines = dialogueLines;
                 dMAn.currentLine = 0;
                 dMAn.ShowDialogue();

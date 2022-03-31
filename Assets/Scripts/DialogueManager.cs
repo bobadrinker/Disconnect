@@ -7,6 +7,8 @@ public class DialogueManager : MonoBehaviour
 {
     public GameObject dBox;
     public Text dText;
+    public GameObject image;
+    public Animator anim;
 
     public bool dialogueActive;
     public bool dismissedThisFrame;
@@ -36,6 +38,7 @@ public class DialogueManager : MonoBehaviour
 
         if(currentLine >= dialogLines.Length)
         {
+            image.SetActive(false);
             dBox.SetActive(false);
             dialogueActive = false;
 
@@ -48,6 +51,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowBox(string dialogue)
     {
+        image.SetActive(true);
         dialogueActive = true;
         dBox.SetActive(true);
         StopAllCoroutines();
@@ -58,7 +62,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!dismissedThisFrame)
         {
-
+            image.SetActive(true);
             dialogueActive = true;
             dBox.SetActive(true);
             thePlayer.canMove = false;

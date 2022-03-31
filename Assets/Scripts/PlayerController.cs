@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if(!canMove)
         {
             myRigidbody.velocity = Vector2.zero;
+            anim.Play("Player_Idle");
             return;
         }
 

@@ -675,6 +675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dBox: {fileID: 1026483367}
   dText: {fileID: 1388710702}
+  image: {fileID: 681881160}
+  anim: {fileID: 597421821}
   dialogueActive: 0
   dismissedThisFrame: 0
   dialogLines:
@@ -702,7 +704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &597421820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1692,6 +1694,7 @@ MonoBehaviour:
   - whats up
   - this is fun
   - goodbye!
+  image: {fileID: 681881160}
 --- !u!61 &1738233692
 BoxCollider2D:
   m_ObjectHideFlags: 0
