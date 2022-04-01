@@ -30,6 +30,8 @@ public class dialogueHolder : MonoBehaviour
                 dMAn.ShowDialogue();
             }
         }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
