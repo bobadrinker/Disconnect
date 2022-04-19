@@ -7,6 +7,8 @@ public class DialogueManager : MonoBehaviour
 {
     public GameObject dBox;
     public Text dText;
+    public GameObject image;
+    public Animator anim;
 
     public bool dialogueActive;
     public bool dismissedThisFrame;
@@ -36,6 +38,8 @@ public class DialogueManager : MonoBehaviour
 
         if(currentLine >= dialogLines.Length)
         {
+            anim.SetBool("inDialogue", false);
+            image.GetComponent<Image>().enabled = false;
             dBox.SetActive(false);
             dialogueActive = false;
 
@@ -48,6 +52,8 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowBox(string dialogue)
     {
+        anim.SetBool("inDialogue", true);
+        image.GetComponent<Image>().enabled = true;
         dialogueActive = true;
         dBox.SetActive(true);
         StopAllCoroutines();
@@ -58,11 +64,19 @@ public class DialogueManager : MonoBehaviour
     {
         if (!dismissedThisFrame)
         {
-
-            dialogueActive = true;
-            dBox.SetActive(true);
-            thePlayer.canMove = false;
-            StartCoroutine(TypeSentence(dialogLines[currentLine]));
+            if (image != null)
+            {
+                anim.SetBool("inDialogue", true);
+                image.GetComponent<Image>().enabled = true;
+                dialogueActive = true;
+                dBox.SetActive(true);
+                thePlayer.canMove = false;
+                StartCoroutine(TypeSentence(dialogLines[currentLine]));
+            } else
+            {
+                image = GameObject.Find("Image");
+                ShowDialogue();
+            }
         }
     }
 

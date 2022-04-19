@@ -14,6 +14,7 @@ public class PlayerHealthManager : MonoBehaviour
     private SpriteRenderer playerSprite;
 
     bool alive = true;
+    public PlayerController thePlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +76,7 @@ public class PlayerHealthManager : MonoBehaviour
     {
         playerSprite.enabled = false;
         alive = false;
-
+        thePlayer.canMove = false;
         StartCoroutine(Respawn());
     }
 
@@ -86,6 +87,7 @@ public class PlayerHealthManager : MonoBehaviour
         playerCurrentHealth = playerMaxHealth;
         playerSprite.enabled = true;
         alive = true;
+        thePlayer.canMove = true;
         transform.position = GameManager.gm.spawnPoint.position;
     }
 }
