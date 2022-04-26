@@ -22,10 +22,12 @@ public class DisableOnLoad : MonoBehaviour
             if (level == scene.name)
             {
                 gameObject.SetActive(false);
+                //Cursor.lockState = CursorLockMode.None;
             }
             else
             {
                 gameObject.SetActive(true);
+                //Cursor.lockState = CursorLockMode.Locked;
             }
         }
     }
