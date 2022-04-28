@@ -13,6 +13,9 @@ public class PlayerHealthManager : MonoBehaviour
 
     private SpriteRenderer playerSprite;
 
+    bool alive = true;
+    public PlayerController thePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,32 +27,35 @@ public class PlayerHealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerCurrentHealth <= 0)
+        if (alive)
         {
-            gameObject.SetActive(false);
-
-            
-        }
-
-        if(flashActive)
-        {
-            if (flashCounter > flashLength * .66f)
+            if (playerCurrentHealth <= 0)
             {
-                playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 0f);
-            }
-            else if (flashCounter > flashLength * .33f)
-            {
-                playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
-            } else if (flashCounter > 0f)
-            {
-                playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 0f);
-            } else
-            {
-                playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
-                flashActive = false;
+                KillPlayer();
             }
 
-            flashCounter -= Time.deltaTime;
+            if (flashActive)
+            {
+                if (flashCounter > flashLength * .66f)
+                {
+                    playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 0f);
+                }
+                else if (flashCounter > flashLength * .33f)
+                {
+                    playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
+                }
+                else if (flashCounter > 0f)
+                {
+                    playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 0f);
+                }
+                else
+                {
+                    playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
+                    flashActive = false;
+                }
+
+                flashCounter -= Time.deltaTime;
+            }
         }
     }
 
@@ -64,5 +70,24 @@ public class PlayerHealthManager : MonoBehaviour
     public void SetMaxHealth()
     {
         playerCurrentHealth = playerMaxHealth;
+    }
+
+    public void KillPlayer()
+    {
+        playerSprite.enabled = false;
+        alive = false;
+        thePlayer.canMove = false;
+        StartCoroutine(Respawn());
+    }
+
+    public IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(3);
+
+        playerCurrentHealth = playerMaxHealth;
+        playerSprite.enabled = true;
+        alive = true;
+        thePlayer.canMove = true;
+        transform.position = GameManager.gm.spawnPoint.position;
     }
 }
