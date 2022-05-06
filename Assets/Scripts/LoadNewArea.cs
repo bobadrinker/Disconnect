@@ -11,10 +11,11 @@ public class LoadNewArea : MonoBehaviour
 
     public string levelToLoad;
 
-    // Update is called once per frame
-    void Update()
+    private List<string> sceneHistory = new List<string>();
+
+    private void Start()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -29,7 +30,8 @@ public class LoadNewArea : MonoBehaviour
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
-
+        sceneHistory.Add(levelToLoad);
         SceneManager.LoadScene(levelToLoad);
+        Debug.Log(levelToLoad);
     }
 }
