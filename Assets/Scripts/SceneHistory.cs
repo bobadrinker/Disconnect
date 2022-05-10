@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class SceneHistory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<string> sceneHistory = new List<string>();
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
     }
 }
