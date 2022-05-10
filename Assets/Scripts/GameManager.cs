@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
         if (scene.name != "Hallway")
         {
             Transform test = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
-            Debug.Log("sge");
         }
         else
         {
@@ -57,7 +56,6 @@ public class GameManager : MonoBehaviour
             else
             {
                 Transform test = Instantiate(playerPrefab, spawnPoints[0].position, spawnPoints[0].rotation);
-                Debug.Log("gwrgr");
             }
         }
     }

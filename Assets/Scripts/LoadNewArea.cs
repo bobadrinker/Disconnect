@@ -31,9 +31,10 @@ public class LoadNewArea : MonoBehaviour
     IEnumerator LoadLevel(string levelToLoad)
     {
         transition.SetTrigger("Start");
+        history.sceneHistory.Add(levelToLoad);
 
         yield return new WaitForSeconds(transitionTime);
-        history.sceneHistory.Add(levelToLoad);
+
         SceneManager.LoadScene(levelToLoad);
         Debug.Log(levelToLoad);
     }
