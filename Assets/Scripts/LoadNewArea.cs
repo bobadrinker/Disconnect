@@ -11,11 +11,14 @@ public class LoadNewArea : MonoBehaviour
 
     public string levelToLoad;
 
-    private List<string> sceneHistory = new List<string>();
+    private SceneHistory history;
 
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (history == null)
+        {
+            history = GameObject.FindGameObjectWithTag("SceneHistory").GetComponent<SceneHistory>();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -30,7 +33,7 @@ public class LoadNewArea : MonoBehaviour
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
-        sceneHistory.Add(levelToLoad);
+        history.sceneHistory.Add(levelToLoad);
         SceneManager.LoadScene(levelToLoad);
         Debug.Log(levelToLoad);
     }
