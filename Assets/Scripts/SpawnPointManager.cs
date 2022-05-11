@@ -22,11 +22,11 @@ public class SpawnPointManager : MonoBehaviour
         {
             spawnPoints[1].SetActive(true);
         }
-        else if (history.sceneHistory[history.sceneHistory.Count - 1] == "Kitchen")
+        else if (history.sceneHistory[history.sceneHistory.Count - 1] == "Attic")
         {
             spawnPoints[2].SetActive(true);
         }
-        else if (history.sceneHistory[history.sceneHistory.Count - 1] == "Attic")
+        else if (history.sceneHistory[history.sceneHistory.Count - 1] == "Kitchen")
         {
             spawnPoints[3].SetActive(true);
         }

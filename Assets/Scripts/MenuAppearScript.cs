@@ -4,7 +4,7 @@
  public class MenuAppearScript : MonoBehaviour {
     
     public GameObject menu; // Assign in inspector
-    private bool isShowing;
+    private bool isShowing = true;
 
     private void Start()
     {
