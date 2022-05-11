@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject dBox;
+    public GameObject text;
     public Text dText;
     public GameObject image;
     public Animator anim;
@@ -19,10 +19,15 @@ public class DialogueManager : MonoBehaviour
 
     private PlayerController thePlayer;
 
+    Image[] dBoxImages;
+
     // Start is called before the first frame update
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
+
+        dBoxImages = GetComponentsInChildren<Image>();
+        TurnOffDBox();
     }
 
     // Update is called once per frame
@@ -40,7 +45,9 @@ public class DialogueManager : MonoBehaviour
         {
             anim.SetBool("inDialogue", false);
             image.GetComponent<Image>().enabled = false;
-            dBox.SetActive(false);
+            //dBox.SetActive(false);
+            TurnOffDBox();
+
             dialogueActive = false;
 
             dismissedThisFrame = true;
@@ -53,9 +60,11 @@ public class DialogueManager : MonoBehaviour
     public void ShowBox(string dialogue)
     {
         anim.SetBool("inDialogue", true);
-        image.GetComponent<Image>().enabled = true;
+        /*image.GetComponent<Image>().enabled = true;
         dialogueActive = true;
-        dBox.SetActive(true);
+        dBox.SetActive(true);*/
+        dialogueActive = true;
+        TurnOnDBox();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(dialogue));
     }
@@ -67,9 +76,11 @@ public class DialogueManager : MonoBehaviour
             if (image != null)
             {
                 anim.SetBool("inDialogue", true);
-                image.GetComponent<Image>().enabled = true;
+                /*image.GetComponent<Image>().enabled = true;
                 dialogueActive = true;
-                dBox.SetActive(true);
+                dBox.SetActive(true);*/;
+                dialogueActive = true;
+                TurnOnDBox();
                 thePlayer.canMove = false;
                 StartCoroutine(TypeSentence(dialogLines[currentLine]));
             } else
@@ -87,6 +98,24 @@ public class DialogueManager : MonoBehaviour
         {
             dText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
+        }
+    }
+
+    void TurnOffDBox()
+    {
+        text.SetActive(false);
+        for (int i = 0; i < dBoxImages.Length; i++)
+        {
+            dBoxImages[i].enabled = false;
+        }
+    }
+
+    void TurnOnDBox()
+    {
+        text.SetActive(true);
+        for (int i = 0; i < dBoxImages.Length; i++)
+        {
+            dBoxImages[i].enabled = true;
         }
     }
 }

@@ -7,6 +7,8 @@ public class PlayerStartPoint : MonoBehaviour
     private PlayerController thePlayer;
     private CameraController theCamera;
 
+    private SceneHistory history;
+
     // Start is called before the first frame update
     void Start()
     {

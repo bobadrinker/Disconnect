@@ -39,7 +39,7 @@ public class KeyHolder : MonoBehaviour
         KeyDoor keyDoor = collider.GetComponent<KeyDoor>();
         if (keyDoor != null)
         {
-            if (ContainsKey(keyDoor.GetKeyType()));
+            if (ContainsKey(keyDoor.GetKeyType()))
             {
                 //Currently holding key to door
                 RemoveKey(keyDoor.GetKeyType());

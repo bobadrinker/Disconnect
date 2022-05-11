@@ -1219,6 +1219,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 2
+--- !u!1 &1211837704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2471959192595905088, guid: 1ee9ba1fee73c4a41892dfc59fb05a7e, type: 3}
+  m_PrefabInstance: {fileID: 171117884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1211837708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211837704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa1936d2cde19a47b57b77e63290721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyType: 0
 --- !u!1 &1235562316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,10 +1452,10 @@ GameObject:
   - component: {fileID: 1505481939}
   - component: {fileID: 1505481938}
   - component: {fileID: 1505481943}
-  - component: {fileID: 1505481942}
   - component: {fileID: 1505481941}
   - component: {fileID: 1505481940}
   - component: {fileID: 1505481944}
+  - component: {fileID: 1505481942}
   m_Layer: 0
   m_Name: PLayer
   m_TagString: Player
@@ -1569,7 +1587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d0d26b56aa2d741806ce61b2fa52d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 0
   canMove: 0
 --- !u!114 &1505481943
 MonoBehaviour:
