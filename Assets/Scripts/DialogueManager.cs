@@ -19,6 +19,9 @@ public class DialogueManager : MonoBehaviour
 
     private PlayerController thePlayer;
 
+    bool textScrolling = false;
+    GameObject sound;
+
     Image[] dBoxImages;
 
     // Start is called before the first frame update
@@ -28,11 +31,27 @@ public class DialogueManager : MonoBehaviour
 
         dBoxImages = GetComponentsInChildren<Image>();
         TurnOffDBox();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(dText.text == dialogLines[currentLine] || dText.text == "")
+        {
+            textScrolling = true;
+            Debug.Log("text is scrolling");
+        }
+        else if (currentLine == dialogLines.Length)
+        {
+            return;
+        }
+        else
+        {
+            textScrolling = false;
+            Debug.Log("text is not scrolling");
+        }
+        
         if (dialogueActive && Input.GetKeyUp(KeyCode.Space))
         {
             currentLine++;
@@ -55,6 +74,7 @@ public class DialogueManager : MonoBehaviour
             currentLine = 0;
             thePlayer.canMove = true;
         }
+
     }
 
     public void ShowBox(string dialogue)
