@@ -37,7 +37,10 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dText.text == dialogLines[currentLine] || dText.text == "")
+        //error happening here after dialogue ends because current line becomes equal
+        //to 4 and that is not in the array
+
+        /*if(dText.text == dialogLines[currentLine] || dText.text == "")
         {
             textScrolling = true;
             Debug.Log("text is scrolling");
@@ -50,18 +53,12 @@ public class DialogueManager : MonoBehaviour
         {
             textScrolling = false;
             Debug.Log("text is not scrolling");
-        }
-        
-        if (dialogueActive && Input.GetKeyUp(KeyCode.Space))
-        {
-            currentLine++;
-            dText.text = "";
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(dialogLines[currentLine]));
-        }
+        }*/
 
-        if(currentLine >= dialogLines.Length)
+        if (currentLine >= dialogLines.Length)
         {
+            Debug.Log("sfsgg");
+
             anim.SetBool("inDialogue", false);
             image.GetComponent<Image>().enabled = false;
             //dBox.SetActive(false);
@@ -73,6 +70,16 @@ public class DialogueManager : MonoBehaviour
 
             currentLine = 0;
             thePlayer.canMove = true;
+        } 
+        else
+        {
+            if (dialogueActive && Input.GetKeyUp(KeyCode.Space))
+            {
+                currentLine++;
+                dText.text = "";
+                StopAllCoroutines();
+                StartCoroutine(TypeSentence(dialogLines[currentLine]));
+            }
         }
 
     }
