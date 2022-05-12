@@ -13,6 +13,8 @@ public class LoadNewArea : MonoBehaviour
 
     private SceneHistory history;
 
+    public PlayerController player;
+
     private void Start()
     {
         if (history == null)
@@ -24,6 +26,7 @@ public class LoadNewArea : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.name == "Player")
         {
+            player.lastScene = GameManager.gm.GetSceneNumber();
             StartCoroutine(LoadLevel(levelToLoad));
         }
     }
@@ -31,7 +34,7 @@ public class LoadNewArea : MonoBehaviour
     IEnumerator LoadLevel(string levelToLoad)
     {
         transition.SetTrigger("Start");
-        history.sceneHistory.Add(levelToLoad);
+        //GameManager.gm.GetSceneNumber();
 
         yield return new WaitForSeconds(transitionTime);
 

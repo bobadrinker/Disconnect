@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SceneHistory : MonoBehaviour
 {
+    public int lastScene = -1;
     public List<string> sceneHistory = new List<string>();
 
     private void Start()

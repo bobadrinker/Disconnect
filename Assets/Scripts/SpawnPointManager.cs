@@ -18,22 +18,22 @@ public class SpawnPointManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (history.sceneHistory[history.sceneHistory.Count - 1] == "Bathroom")
+        int num = GameManager.gm.GetSceneNumber();
+        if (num == 1)
         {
             spawnPoints[1].SetActive(true);
         }
-        else if (history.sceneHistory[history.sceneHistory.Count - 1] == "Attic")
+        else if (num == 2)
         {
             spawnPoints[2].SetActive(true);
         }
-        else if (history.sceneHistory[history.sceneHistory.Count - 1] == "Kitchen")
+        else if (num == 3)
         {
             spawnPoints[3].SetActive(true);
         }
         else
         {
             spawnPoints[0].SetActive(true);
-            Debug.Log(history.sceneHistory[history.sceneHistory.Count - 1]);
         }
     }
 

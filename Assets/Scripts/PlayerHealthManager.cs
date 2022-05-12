@@ -88,6 +88,6 @@ public class PlayerHealthManager : MonoBehaviour
         playerSprite.enabled = true;
         alive = true;
         thePlayer.canMove = true;
-        transform.position = GameManager.gm.spawnPoint.position;
+        transform.position = GameManager.gm.spawnPoint.transform.position;
     }
 }
