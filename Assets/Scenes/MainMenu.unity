@@ -848,6 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc25959afec922429334a1c2537454c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPress: {fileID: 8300000, guid: 9dc587ef67a2fe84dac6ee4f580d13a9, type: 3}
 --- !u!1 &1049204381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,7 +1077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7e9ca18f700a642a09097d3cf1fb39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPressSound: {fileID: 810378608}
   Play_Button: {fileID: 553228361}
   Quit_Button: {fileID: 1433769392}
   Options_Button: {fileID: 547808847}
