@@ -23,6 +23,9 @@ public class EnemyController : MonoBehaviour
     private GameObject thePlayer;
     public string scene;
 
+    private Animator anim;
+    bool facingRight = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,8 @@ public class EnemyController : MonoBehaviour
 
         timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeBetweenMove * 1.25f);
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,6 +46,7 @@ public class EnemyController : MonoBehaviour
         
         if (moving)
         {
+            anim.SetBool("isMoving", true);
             timeToMoveCounter -= Time.deltaTime;
             myRigidbody.velocity = moveDirection;
 
@@ -52,6 +58,7 @@ public class EnemyController : MonoBehaviour
             }
 
         } else {
+            anim.SetBool("isMoving", false);
             timeBetweenMoveCounter -= Time.deltaTime;
             myRigidbody.velocity = Vector2.zero;
 
@@ -86,5 +93,14 @@ public class EnemyController : MonoBehaviour
             thePlayer = other.gameObject;
         }*/
 
+    }
+
+    void Flip ()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        facingRight = !facingRight;
     }
 }

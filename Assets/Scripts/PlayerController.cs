@@ -24,8 +24,7 @@ public class PlayerController : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-        // Start is called before the first frame update
-        void Start()
+    void Start()
     {
         anim = GetComponent<Animator>();
 
