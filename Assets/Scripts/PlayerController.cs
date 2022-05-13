@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+    public int lastScene = 0;
+
     private void Awake()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -94,8 +96,6 @@ public class PlayerController : MonoBehaviour
             currentMoveSpeed = moveSpeed;
         }*/
     }
-
-    public int lastScene = 0;
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {

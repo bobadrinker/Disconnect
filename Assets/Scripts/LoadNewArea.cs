@@ -13,10 +13,14 @@ public class LoadNewArea : MonoBehaviour
 
     private SceneHistory history;
 
-    public PlayerController player;
+    PlayerController player;
+
+    public bool hallway = false;
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerController>();
+
         if (history == null)
         {
             history = GameObject.FindGameObjectWithTag("SceneHistory").GetComponent<SceneHistory>();
@@ -26,7 +30,12 @@ public class LoadNewArea : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.name == "Player")
         {
-            player.lastScene = GameManager.gm.GetSceneNumber();
+            if (hallway == false)
+            {
+                Debug.Log(player.lastScene);
+                player.lastScene = GameManager.gm.GetSceneNumber();
+                Debug.Log("assigning: " + GameManager.gm.GetSceneNumber());
+            }
             StartCoroutine(LoadLevel(levelToLoad));
         }
     }
