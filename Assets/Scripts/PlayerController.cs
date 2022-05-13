@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     private static bool playerExists;
 
+    public GameObject playerItemDrop;
+
     public bool canMove;
 
     private Animator anim;
