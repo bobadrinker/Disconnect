@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         if (gm != null)
         {
             Destroy(gameObject);
@@ -21,50 +23,58 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public Transform playerPrefab;
-    public Transform spawnPoint;
-    public Transform[] spawnPoints;
+    public GameObject spawnPoint;
     public int spawnDelay = 2;
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        /*Debug.Log("ahbfhabfg");
+
+        if (spawnPoint == null)
+        {
+            spawnPoint = FindObjectOfType<PlayerStartPoint>().gameObject;
+        }*/
+    }
 
     public IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(spawnDelay);
-
-        Scene scene = SceneManager.GetActiveScene();
-
-        if (scene.name != "Hallway")
-        {
-            Transform test = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
-            Debug.Log("sge");
-        }
-        else
-        {
-            if (history.sceneHistory[history.sceneHistory.Count - 1] == "Bathroom")
-            {
-                Transform test = Instantiate(playerPrefab, spawnPoints[1].position, spawnPoints[1].rotation);
-                Debug.Log(history.sceneHistory[history.sceneHistory.Count - 1]);
-            }
-            else if (history.sceneHistory[history.sceneHistory.Count - 1] == "Kitchen")
-            {
-                Transform test = Instantiate(playerPrefab, spawnPoints[2].position, spawnPoints[2].rotation);
-                Debug.Log(history.sceneHistory[history.sceneHistory.Count - 1]);
-            }
-            else if (history.sceneHistory[history.sceneHistory.Count - 1] == "Attic")
-            {
-                Transform test = Instantiate(playerPrefab, spawnPoints[3].position, spawnPoints[3].rotation);
-                Debug.Log(history.sceneHistory[history.sceneHistory.Count - 1]);
-            }
-            else
-            {
-                Transform test = Instantiate(playerPrefab, spawnPoints[0].position, spawnPoints[0].rotation);
-                Debug.Log("gwrgr");
-            }
-        }
+        Transform test = Instantiate(playerPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
     }
 
     public void KillPlayer (PlayerHealthManager player)
     {
         Destroy(player.gameObject);
         gm.StartCoroutine(gm.RespawnPlayer());
+    }
+
+    public int GetSceneNumber()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "house_inside")
+        {
+            return 0;
+        }
+        if (scene.name == "Bathroom")
+        {
+            return 1;
+        }
+        else if (scene.name == "Kitchen")
+        {
+            return 2;
+        }
+        else if (scene.name == "Attic")
+        {
+            return 3;
+        }
+
+        return -1;
     }
 }
