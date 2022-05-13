@@ -721,6 +721,7 @@ MonoBehaviour:
   transition: {fileID: 1259003171}
   transitionTime: 1
   levelToLoad: DragAndDrop
+  hallway: 0
 --- !u!61 &663266756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -865,6 +866,7 @@ MonoBehaviour:
   transition: {fileID: 1259003171}
   transitionTime: 1
   levelToLoad: house_inside
+  hallway: 0
 --- !u!61 &786564456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1794,6 +1796,7 @@ MonoBehaviour:
   - this is fun
   - goodbye!
   image: {fileID: 681881160}
+  icon: {fileID: 0}
 --- !u!61 &1738233692
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2191,6 +2194,7 @@ MonoBehaviour:
   - this is fun
   - goodbye!
   image: {fileID: 40943493}
+  icon: {fileID: 0}
 --- !u!61 &2138842584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2289,6 +2293,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3993392, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1553025629857014862, guid: b92224b818ee2664599591280148d402, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
