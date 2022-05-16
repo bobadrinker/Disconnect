@@ -12,10 +12,11 @@ public class MinigameStarter : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             icon.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Space))
+            SceneManager.LoadScene("DragAndDrop");
+            /*if (Input.GetKeyDown(KeyCode.Space))
             {
                 SceneManager.LoadScene("DragAndDrop");
-            }
+            }*/
         }
     }
 
