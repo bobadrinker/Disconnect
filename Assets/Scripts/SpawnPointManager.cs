@@ -9,10 +9,10 @@ public class SpawnPointManager : MonoBehaviour
 
     private void Awake()
     {
-        if (history == null)
+        /*if (history == null)
         {
             history = GameObject.FindGameObjectWithTag("SceneHistory").GetComponent<SceneHistory>();
-        }
+        }*/
     }
 
     // Start is called before the first frame update
