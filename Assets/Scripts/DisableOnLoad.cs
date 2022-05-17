@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DisableOnLoad : MonoBehaviour
 {
     public string[] levels;
+    public Scene scene;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,8 @@ public class DisableOnLoad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Scene scene = SceneManager.GetActiveScene();
+        scene = SceneManager.GetActiveScene();
+        Debug.Log(scene);
         foreach (string level in levels)
         {
             if (level == scene.name)

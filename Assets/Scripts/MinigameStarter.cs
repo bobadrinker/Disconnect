@@ -6,17 +6,22 @@ using UnityEngine.SceneManagement;
 public class MinigameStarter : MonoBehaviour
 {
     public GameObject icon;
+    bool inRange;
+
+    private void Update()
+    {
+        if (inRange == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("DragAndDrop");
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")
         {
             icon.SetActive(true);
-            SceneManager.LoadScene("DragAndDrop");
-            /*if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SceneManager.LoadScene("DragAndDrop");
-            }*/
+            inRange = true;
         }
     }
 
@@ -25,6 +30,7 @@ public class MinigameStarter : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             icon.SetActive(false);
+            inRange = false;
         }
     }
 }

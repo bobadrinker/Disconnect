@@ -8,6 +8,7 @@ TagManager:
   - menuSelectSound
   - SceneHistory
   - SpawnPoint
+  - Enemy
   layers:
   - Default
   - TransparentFX

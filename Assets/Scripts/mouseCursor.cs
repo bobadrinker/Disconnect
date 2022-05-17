@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mouseCursor : MonoBehaviour
 {
@@ -8,11 +9,19 @@ public class mouseCursor : MonoBehaviour
     public Sprite handCursor;
     public Sprite normalCursor;
 
+    private DisableOnLoad[] disable;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
         rend = GetComponent<SpriteRenderer>();
+        /*Scene scene = SceneManager.GetActiveScene();
+        disable = FindObjectsOfType<DisableOnLoad>();
+        foreach(DisableOnLoad disableOn in disable)
+        {
+            disableOn.scene = scene;
+        }*/
     }
 
     // Update is called once per frame

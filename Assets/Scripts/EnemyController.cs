@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
     public string scene;
 
     private Animator anim;
-    bool facingRight = true;
+    private float oldPosition = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,19 +38,21 @@ public class EnemyController : MonoBehaviour
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeBetweenMove * 1.25f);
 
         anim = GetComponent<Animator>();
+
+        oldPosition = transform.position.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         if (moving)
         {
             anim.SetBool("isMoving", true);
             timeToMoveCounter -= Time.deltaTime;
             myRigidbody.velocity = moveDirection;
 
-            if(timeToMoveCounter < 0f)
+            if (timeToMoveCounter < 0f)
             {
                 moving = false;
                 //timeBetweenMoveCounter = timeBetweenMove;
@@ -62,25 +64,36 @@ public class EnemyController : MonoBehaviour
             timeBetweenMoveCounter -= Time.deltaTime;
             myRigidbody.velocity = Vector2.zero;
 
-            if(timeBetweenMoveCounter < 0f)
+            if (timeBetweenMoveCounter < 0f)
             {
                 moving = true;
                 //timeToMoveCounter = timeToMove;
                 timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeBetweenMove * 1.25f);
 
-                moveDirection = new Vector3(Random.Range (-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
+                moveDirection = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
             }
         }
 
         if (reloading)
         {
             waitToReload -= Time.deltaTime;
-            if(waitToReload < 0)
+            if (waitToReload < 0)
             {
                 SceneManager.LoadScene(scene);
                 thePlayer.SetActive(true);
             }
         }
+
+        if (transform.position.x > oldPosition)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+
+        if (transform.position.x < oldPosition)
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        oldPosition = transform.position.x;
 
     }
 
@@ -93,14 +106,5 @@ public class EnemyController : MonoBehaviour
             thePlayer = other.gameObject;
         }*/
 
-    }
-
-    void Flip ()
-    {
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
-
-        facingRight = !facingRight;
     }
 }

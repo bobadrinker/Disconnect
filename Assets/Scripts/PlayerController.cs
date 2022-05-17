@@ -105,16 +105,19 @@ public class PlayerController : MonoBehaviour
         {
             case 0:
                 transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[0].transform.position;
+                GameManager.gm.spawnPoint = FindObjectOfType<SpawnPointManager>().spawnPoints[0];
                 return;
             case 1:
                 transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[1].transform.position;
-                Debug.Log(FindObjectOfType<SpawnPointManager>().spawnPoints[1].transform.position);
+                GameManager.gm.spawnPoint = FindObjectOfType<SpawnPointManager>().spawnPoints[1];
                 return;
             case 2:
                 transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[2].transform.position;
+                GameManager.gm.spawnPoint = FindObjectOfType<SpawnPointManager>().spawnPoints[2];
                 return;
             case 3:
                 transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[3].transform.position;
+                GameManager.gm.spawnPoint = FindObjectOfType<SpawnPointManager>().spawnPoints[3];
                 return;
         }
         
