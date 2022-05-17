@@ -10,6 +10,7 @@ public class dialogueHolder : MonoBehaviour
     public string[] dialogueLines;
     bool inRange;
     public GameObject image;
+    public GameObject icon;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class dialogueHolder : MonoBehaviour
         if(other.gameObject.name == "Player")
         {
             inRange = true;
+            icon.SetActive(true);
         }
     }
 
@@ -48,6 +50,7 @@ public class dialogueHolder : MonoBehaviour
         {
             inRange = false;
             dMAn.dismissedThisFrame = false;
+            icon.SetActive(false);
         }
     }
 }

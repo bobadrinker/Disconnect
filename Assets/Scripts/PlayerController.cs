@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,11 +15,19 @@ public class PlayerController : MonoBehaviour
 
     private static bool playerExists;
 
+    public GameObject playerItemDrop;
+
     public bool canMove;
 
     private Animator anim;
 
-    // Start is called before the first frame update
+    public int lastScene = 0;
+
+    private void Awake()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -88,5 +97,26 @@ public class PlayerController : MonoBehaviour
         {
             currentMoveSpeed = moveSpeed;
         }*/
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        switch (lastScene)
+        {
+            case 0:
+                transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[0].transform.position;
+                return;
+            case 1:
+                transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[1].transform.position;
+                Debug.Log(FindObjectOfType<SpawnPointManager>().spawnPoints[1].transform.position);
+                return;
+            case 2:
+                transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[2].transform.position;
+                return;
+            case 3:
+                transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[3].transform.position;
+                return;
+        }
+        
     }
 }
