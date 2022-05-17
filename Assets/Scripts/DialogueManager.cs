@@ -24,6 +24,8 @@ public class DialogueManager : MonoBehaviour
 
     Image[] dBoxImages;
 
+    public AudioSource typing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,10 +80,15 @@ public class DialogueManager : MonoBehaviour
                 currentLine++;
                 dText.text = "";
                 StopAllCoroutines();
-                StartCoroutine(TypeSentence(dialogLines[currentLine]));
+                try
+                {
+                    StartCoroutine(TypeSentence(dialogLines[currentLine]));
+                } catch (System.Exception e)
+                {
+                    Debug.Log(e);
+                }
             }
         }
-
     }
 
     public void ShowBox(string dialogue)
@@ -118,14 +125,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    bool playScrolling = false;
+
     IEnumerator TypeSentence (string sentence)
     {
         dText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
+            typing.Play();
             dText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        typing.Stop();
     }
 
     void TurnOffDBox()
