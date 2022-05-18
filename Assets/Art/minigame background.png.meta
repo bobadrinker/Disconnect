@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: ff9f97122cd165948a118f1f85bbb1c1
+guid: ed929ddcd54fd5942b0f632e9bfe05f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7728605415454525568
-    second: cutscene 1 (1)_0
+      213: -9003842293714687946
+    second: minigame background_0
   - first:
-      213: -2048901553779980799
-    second: cutscene 1 (1)_1
+      213: -4655213703593264314
+    second: minigame background_1
   - first:
-      213: -841435020530155283
-    second: cutscene 1 (1)_2
+      213: 9111185027369106996
+    second: minigame background_2
   - first:
-      213: -1475187491185883245
-    second: cutscene 1 (1)_3
+      213: -728086783525427414
+    second: minigame background_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,10 +103,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cutscene 1 (1)_0
+      name: minigame background_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 6
         y: 0
         width: 353
         height: 198
@@ -117,17 +117,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 088c35d6da5814b60800000000000000
-      internalID: 7728605415454525568
+      spriteID: 6386f75632deb0380800000000000000
+      internalID: -9003842293714687946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cutscene 1 (1)_1
+      name: minigame background_1
       rect:
         serializedVersion: 2
-        x: 374
+        x: 366
         y: 0
         width: 353
         height: 198
@@ -138,17 +138,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 106c23374e6d093e0800000000000000
-      internalID: -2048901553779980799
+      spriteID: 64bfacb0dcb556fb0800000000000000
+      internalID: -4655213703593264314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cutscene 1 (1)_2
+      name: minigame background_2
       rect:
         serializedVersion: 2
-        x: 740
+        x: 726
         y: 0
         width: 353
         height: 198
@@ -159,17 +159,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de00ab39e4f9254f0800000000000000
-      internalID: -841435020530155283
+      spriteID: 43e713f528e617e70800000000000000
+      internalID: 9111185027369106996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cutscene 1 (1)_3
+      name: minigame background_3
       rect:
         serializedVersion: 2
-        x: 1105
+        x: 1087
         y: 0
         width: 353
         height: 198
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39704caeac4178be0800000000000000
-      internalID: -1475187491185883245
+      spriteID: a276f4e8de055e5f0800000000000000
+      internalID: -728086783525427414
       vertices: []
       indices: 
       edges: []
