@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour
         canMove = true;
 
         dMAn = FindObjectOfType<DialogueManager>();
+        dMAn.dialogLines = dialogueLines;
+        dMAn.names = names;
+        dMAn.currentLine = 0;
+        dMAn.ShowDialogue();
     }
 
     // Update is called once per frame

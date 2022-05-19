@@ -24,11 +24,13 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed;
 
     private PlayerController thePlayer;
+    private MenuAppearScript menuAppear;
 
     // Start is called before the first frame update
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
+        menuAppear = FindObjectOfType<MenuAppearScript>();
 
         //dBoxImages = GetComponentsInChildren<Image>();
         TurnOffDBox();
@@ -190,6 +192,7 @@ public class DialogueManager : MonoBehaviour
 
     void TurnOnDBox()
     {
+        menuAppear.isShowing = false;
         dBox.enabled = true;
         text.SetActive(true);
         name.gameObject.SetActive(true);

@@ -998,6 +998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1227261962}
+  isShowing: 1
   tabForInventory: {fileID: 1552492152}
 --- !u!4 &726282534
 Transform:
@@ -1328,6 +1329,30 @@ PrefabInstance:
     - target: {fileID: 5863490894510581958, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068844886861433642, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068844886861433642, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: names.Array.data[0]
+      value: Player sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068844886861433642, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: names.Array.data[1]
+      value: Player sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068844886861433642, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068844886861433642, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: dialogueLines.Array.data[0]
+      value: Oh no I overslept a little. Mum isn't gonna be happy with me
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068844886861433642, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
+      propertyPath: dialogueLines.Array.data[1]
+      value: 'I should probably go and talk to her and see if she needs anything '
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1149508729, guid: 454f4c0ec9a4819449be8f675e18df8b, type: 3}
