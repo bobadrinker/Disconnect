@@ -19,7 +19,7 @@ public class MinigameManagaer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (foods.Length != 0)
+        if (foods.Length != 0)
         {
             int index = Random.Range(1, foods.Length);
             symbols[index].SetActive(true);

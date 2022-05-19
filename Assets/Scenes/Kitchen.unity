@@ -286,7 +286,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7249266649074385828, guid: de67360093ff2b444bcdb9f314f178a9, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7249266649074385828, guid: de67360093ff2b444bcdb9f314f178a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -404,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7492699271560377947, guid: 93b6665aaad6c38438d59ebd01faa23d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7492699271560377947, guid: 93b6665aaad6c38438d59ebd01faa23d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -559,6 +559,130 @@ PrefabInstance:
     - target: {fileID: 6272490126789331064, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: m_Name
       value: sprite base
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[0]
+      value: Mum
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[1]
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[2]
+      value: Mum
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[3]
+      value: Player confused
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[4]
+      value: Mum
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[5]
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[6]
+      value: Mum
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[7]
+      value: Player worried
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[8]
+      value: Mum
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[9]
+      value: Mum
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[10]
+      value: Player worried
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[11]
+      value: Mum
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[12]
+      value: Player sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[13]
+      value: Mum
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[0]
+      value: Is your little friend outside?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[1]
+      value: Yeah they came over to help me set up for the guests early!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[2]
+      value: "Sure\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[3]
+      value: '(What sort of reaction was that!?) '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[4]
+      value: Help me prepare the food if you're no longer busy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[5]
+      value: Um ok
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[6]
+      value: Read out that book to me then
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[7]
+      value: B-but Mum I-I can't I- don't know how to read it yet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[8]
+      value: "So you won't even try\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[9]
+      value: 'Have you not been practising? When I was a little girl I picked up
+        our native tongue just from listening to those around me speak it. You will
+        be a disgrace to our bloodline if you refuse to learn it '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[10]
+      value: N-no I have been practising I've been trying really hard but-
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[11]
+      value: 'Then what''s the problem? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[12]
+      value: 'Ok i''m sorry i''ll try '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: dialogueLines.Array.data[13]
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
@@ -767,7 +891,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2487233676162059114, guid: 21b18ac989679b34ab497c4f4d1844f3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2487233676162059114, guid: 21b18ac989679b34ab497c4f4d1844f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -837,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5266817951490257015, guid: 7b932891cc5048246a965114df1773b6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5266817951490257015, guid: 7b932891cc5048246a965114df1773b6, type: 3}
       propertyPath: m_LocalPosition.x

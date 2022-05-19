@@ -6,27 +6,31 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public GameObject text;
+
+    public Text name;
     public Text dText;
     public GameObject image;
+    public Image dBox;
     public Animator anim;
 
     public bool dialogueActive;
     public bool dismissedThisFrame;
 
     public string[] dialogLines;
+    public string[] names;
+    public Image[] dBoxImages;
+
     public int currentLine;
     public float typingSpeed;
 
     private PlayerController thePlayer;
-
-    Image[] dBoxImages;
 
     // Start is called before the first frame update
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
 
-        dBoxImages = GetComponentsInChildren<Image>();
+        //dBoxImages = GetComponentsInChildren<Image>();
         TurnOffDBox();
     }
 
@@ -44,7 +48,7 @@ public class DialogueManager : MonoBehaviour
         if(currentLine >= dialogLines.Length)
         {
             anim.SetBool("inDialogue", false);
-            image.GetComponent<Image>().enabled = false;
+            //dBoxImages.GetComponent<Image>().enabled = false;
             //dBox.SetActive(false);
             TurnOffDBox();
 
@@ -94,6 +98,78 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence (string sentence)
     {
         dText.text = "";
+        name.text = names[currentLine];
+        if (names[currentLine] == "Mum")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 0)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+        else if (names[currentLine] == "Player")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 1)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+        else if (names[currentLine] == "Player confused")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 2)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+        else if (names[currentLine] == "Player worried")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 3)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+        else if (names[currentLine] == "Player sad")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 4)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+
         foreach (char letter in sentence.ToCharArray())
         {
             dText.text += letter;
@@ -103,6 +179,8 @@ public class DialogueManager : MonoBehaviour
 
     void TurnOffDBox()
     {
+        dBox.enabled = false;
+        name.gameObject.SetActive(false);
         text.SetActive(false);
         for (int i = 0; i < dBoxImages.Length; i++)
         {
@@ -112,7 +190,9 @@ public class DialogueManager : MonoBehaviour
 
     void TurnOnDBox()
     {
+        dBox.enabled = true;
         text.SetActive(true);
+        name.gameObject.SetActive(true);
         for (int i = 0; i < dBoxImages.Length; i++)
         {
             dBoxImages[i].enabled = true;

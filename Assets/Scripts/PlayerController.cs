@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
 
     public int lastScene = 0;
 
+    private DialogueManager dMAn;
+    public string[] names;
+    public string[] dialogueLines;
+
     private void Awake()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -42,7 +46,9 @@ public class PlayerController : MonoBehaviour
             Destroy (gameObject);
         }
 
-        canMove = true; 
+        canMove = true;
+
+        dMAn = FindObjectOfType<DialogueManager>();
     }
 
     // Update is called once per frame
