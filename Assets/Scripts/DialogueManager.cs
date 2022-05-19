@@ -24,13 +24,13 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed;
 
     private PlayerController thePlayer;
-    private MenuAppearScript menuAppear;
+    public GameObject minimap;
 
     // Start is called before the first frame update
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
-        menuAppear = FindObjectOfType<MenuAppearScript>();
+        //menuAppear = FindObjectOfType<MenuAppearScript>();
 
         //dBoxImages = GetComponentsInChildren<Image>();
         TurnOffDBox();
@@ -188,11 +188,12 @@ public class DialogueManager : MonoBehaviour
         {
             dBoxImages[i].enabled = false;
         }
+        minimap.SetActive(true);
     }
 
     void TurnOnDBox()
     {
-        menuAppear.isShowing = false;
+        //menuAppear.isShowing = false;
         dBox.enabled = true;
         text.SetActive(true);
         name.gameObject.SetActive(true);
@@ -200,5 +201,6 @@ public class DialogueManager : MonoBehaviour
         {
             dBoxImages[i].enabled = true;
         }
+        minimap.SetActive(false);
     }
 }

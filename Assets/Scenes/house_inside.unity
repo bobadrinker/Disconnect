@@ -318,6 +318,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16.952255, y: 0.2841816}
   m_EdgeRadius: 0
+--- !u!1 &247219107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2070577530, guid: b92224b818ee2664599591280148d402, type: 3}
+  m_PrefabInstance: {fileID: 1704740952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &265773678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2271,6 +2276,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 322799931, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070577530, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1553025629857014862, guid: b92224b818ee2664599591280148d402, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2283,6 +2296,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 8.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1553025631593979881, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: minimap
+      value: 
+      objectReference: {fileID: 247219107}
     - target: {fileID: 1553025631593979881, guid: b92224b818ee2664599591280148d402, type: 3}
       propertyPath: dBoxImages.Array.size
       value: 5
@@ -2389,6 +2406,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1553025631652229310, guid: b92224b818ee2664599591280148d402, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772582486189640179, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 159.2269
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772582486189640179, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772582486189640179, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 310.2249
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772582486189640179, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3554095086193198351, guid: b92224b818ee2664599591280148d402, type: 3}
