@@ -20,7 +20,7 @@ public class MinigameStarter : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            icon.SetActive(true);
+            //icon.SetActive(true);
             inRange = true;
         }
     }

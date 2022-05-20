@@ -43,7 +43,7 @@ public class dialogueHolder : MonoBehaviour
         if(other.gameObject.name == "Player")
         {
             inRange = true;
-            icon.SetActive(true);
+            //icon.SetActive(true);
         }
     }
 

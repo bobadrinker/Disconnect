@@ -1,39 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class MinigameManagaer : MonoBehaviour
 {
     public GameObject[] symbols;
-    public GameObject[] foods;
-    public GameObject bowl;
+    GameObject symbol;
+    public List<string> foods = new List<string>();
+    public Bowl bowl;
+    public GameObject cross;
 
-    bool entered;
+    bool correct = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        NewFood();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (foods.Length != 0)
+        if (bowl.food != null)
         {
-            int index = Random.Range(1, foods.Length);
-            symbols[index].SetActive(true);
-            if (entered)
+            string name = bowl.food.gameObject.ToString();
+            int index = foods.IndexOf(name);
+            if (index == Array.IndexOf(symbols, symbol))
             {
-                symbols[index].SetActive(false);
-                Destroy(foods[index]);
-                entered = false;
+                NewFood();
             }
+            else
+            {
+                cross.SetActive(true);
+            }
+        }
+        else
+        {
+            cross.SetActive(false);
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void NewFood()
     {
-        entered = true;
+        int index = UnityEngine.Random.Range(1, symbols.Length);
+
+        symbols[index].SetActive(true);
+        symbol = symbols[index];
     }
 }
