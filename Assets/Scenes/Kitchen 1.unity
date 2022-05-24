@@ -222,7 +222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &450024866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6272490126789331044, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7342055
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 6272490126789331044, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -562,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.size
-      value: 14
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[0]
@@ -570,15 +570,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[1]
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
-      propertyPath: names.Array.data[2]
       value: Mum
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: names.Array.data[2]
+      value: Player sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[3]
-      value: Player confused
+      value: Mum
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[4]
@@ -586,7 +586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[5]
-      value: Player
+      value: Mum
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[6]
@@ -594,7 +594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[7]
-      value: Player worried
+      value: Mum
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[8]
@@ -606,7 +606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[10]
-      value: Player worried
+      value: Mum
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[11]
@@ -614,7 +614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[12]
-      value: Player sad
+      value: Mum
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.data[13]
@@ -622,61 +622,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.size
-      value: 14
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[0]
-      value: Is your little friend outside?
+      value: ...
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[1]
-      value: Yeah they came over to help me set up for the guests early!
+      value: 'You''ve ruined the meal. Why do you always insist on embarrassing me?
+        This wouldn''t happen if you weren''t so lazy and would actually learn to- '
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[2]
-      value: "Sure\u2026"
+      value: 'I''m Going to the bathroom  '
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[3]
-      value: '(What sort of reaction was that!?) '
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[4]
-      value: Help me prepare the food if you're no longer busy
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[5]
-      value: Um ok
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[6]
-      value: Read out that book to me then
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[7]
-      value: B-but Mum I-I can't I- don't know how to read it yet
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[8]
-      value: "So you won't even try\u2026"
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[9]
-      value: 'Have you not been practising? When I was a little girl I picked up
-        our native tongue just from listening to those around me speak it. You will
-        be a disgrace to our bloodline if you refuse to learn it '
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[10]
-      value: N-no I have been practising I've been trying really hard but-
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[11]
-      value: 'Then what''s the problem? '
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[12]
-      value: 'Ok i''m sorry i''ll try '
+      value: "There should be a recipe book on the table over there. It's your Grandmother\u2019s.
+        She wrote it to help us know what to use. All you have to do is hand me the
+        correct ingredients in the order I need them."
       objectReference: {fileID: 0}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: dialogueLines.Array.data[13]
@@ -938,7 +957,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ce4d020ab3bee0d46a1598a7b9975058, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1156,7 +1175,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a306aa1e1b081a48ab8d9f2d54cb7ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed56fa22b2b3be04894f2e165ee3f0a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
