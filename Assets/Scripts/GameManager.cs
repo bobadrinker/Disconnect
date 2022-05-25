@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         {
             return 1;
         }
-        else if (scene.name == "Kitchen")
+        else if (scene.name == "Kitchen" || scene.name == "Kitchen After")
         {
             return 2;
         }

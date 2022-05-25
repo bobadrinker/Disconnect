@@ -2304,6 +2304,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -120.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1553025631410600809, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f84b372949196b944b3e726f3a58c7cf, type: 3}
     - target: {fileID: 1553025631593979881, guid: b92224b818ee2664599591280148d402, type: 3}
       propertyPath: minimap
       value: 

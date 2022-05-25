@@ -32,7 +32,7 @@ public class LoadNewArea : MonoBehaviour
         {
             if (hallway == false)
             {
-                Debug.Log(player.lastScene);
+                //Debug.Log(player.lastScene);
                 player.lastScene = GameManager.gm.GetSceneNumber();
                 Debug.Log("assigning: " + GameManager.gm.GetSceneNumber());
             }

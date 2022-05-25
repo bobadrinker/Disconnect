@@ -20,7 +20,7 @@ public class dialogueHolder : MonoBehaviour
     {
         dMAn = FindObjectOfType<DialogueManager>();
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "Kitchen 1")
+        if (scene.name == "KitchenAfter")
         {
             dMAn.dialogLines = dialogueLines;
             dMAn.names = names;

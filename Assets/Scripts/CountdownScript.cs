@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CountdownScript : MonoBehaviour
 {
-    [SerializeField] private Text uiText;
+    public Slider slider;
     public float mainTimer;
 
     private float timer;
@@ -18,14 +18,14 @@ public class CountdownScript : MonoBehaviour
         if(timer >= 0.0f && canCount)
         {
             timer -= Time.deltaTime;
-            uiText.text = timer.ToString("F");
+            slider.value = timer;
         }
 
         else if(timer <= 0.0f && !doOnce)
         {
             canCount = false;
             doOnce = true;
-            uiText.text = "0.00";
+            slider.value = 0.0f;
             timer = 0.0f;
             GameOver();
         }
@@ -40,6 +40,6 @@ public class CountdownScript : MonoBehaviour
 
     void GameOver()
     {
-        SceneManager.LoadScene("Kitchen 1");
+        SceneManager.LoadScene("KitchenAfter");
     }
 }
