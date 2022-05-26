@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
 
     public Text name;
     public Text dText;
+    public GameObject spaceText;
     public GameObject image;
     public Image dBox;
     public Animator anim;
@@ -184,6 +185,7 @@ public class DialogueManager : MonoBehaviour
         dBox.enabled = false;
         name.gameObject.SetActive(false);
         text.SetActive(false);
+        spaceText.SetActive(false);
         for (int i = 0; i < dBoxImages.Length; i++)
         {
             dBoxImages[i].enabled = false;
@@ -197,6 +199,7 @@ public class DialogueManager : MonoBehaviour
         dBox.enabled = true;
         text.SetActive(true);
         name.gameObject.SetActive(true);
+        spaceText.SetActive(true);
         for (int i = 0; i < dBoxImages.Length; i++)
         {
             dBoxImages[i].enabled = true;
