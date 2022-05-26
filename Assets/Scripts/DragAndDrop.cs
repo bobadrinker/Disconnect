@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class DragAndDrop : MonoBehaviour
 {
     private bool selected;
-    bool selectable = true;
+    public bool selectable = true;
 
     void Update()
     {

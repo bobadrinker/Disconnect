@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class dialogueHolder : MonoBehaviour
 {
@@ -12,12 +13,20 @@ public class dialogueHolder : MonoBehaviour
     public string[] dialogueLines;
     bool inRange;
     //public Image[] image;
-    public GameObject icon;
+    //public GameObject icon;
 
     // Start is called before the first frame update
     void Start()
     {
         dMAn = FindObjectOfType<DialogueManager>();
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "KitchenAfter")
+        {
+            dMAn.dialogLines = dialogueLines;
+            dMAn.names = names;
+            dMAn.currentLine = 0;
+            dMAn.ShowDialogue();
+        }
     }
 
     // Update is called once per frame
@@ -53,7 +62,7 @@ public class dialogueHolder : MonoBehaviour
         {
             inRange = false;
             dMAn.dismissedThisFrame = false;
-            icon.SetActive(false);
+            //icon.SetActive(false);
         }
     }
 }

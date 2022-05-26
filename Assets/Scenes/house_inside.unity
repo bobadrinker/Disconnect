@@ -1890,6 +1890,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2487233676553747556, guid: 21b18ac989679b34ab497c4f4d1844f3, type: 3}
   m_PrefabInstance: {fileID: 265773678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1487993464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1553025631750030512, guid: b92224b818ee2664599591280148d402, type: 3}
+  m_PrefabInstance: {fileID: 1704740952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1552492152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,10 +2309,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -120.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1553025631410600809, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f84b372949196b944b3e726f3a58c7cf, type: 3}
     - target: {fileID: 1553025631593979881, guid: b92224b818ee2664599591280148d402, type: 3}
       propertyPath: minimap
       value: 
       objectReference: {fileID: 247219107}
+    - target: {fileID: 1553025631593979881, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: spaceText
+      value: 
+      objectReference: {fileID: 1487993464}
     - target: {fileID: 1553025631593979881, guid: b92224b818ee2664599591280148d402, type: 3}
       propertyPath: dBoxImages.Array.size
       value: 5
@@ -2419,6 +2432,14 @@ PrefabInstance:
     - target: {fileID: 1553025631652229311, guid: b92224b818ee2664599591280148d402, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553025631750030512, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553025631750030519, guid: b92224b818ee2664599591280148d402, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 170.5
       objectReference: {fileID: 0}
     - target: {fileID: 2772582486189640179, guid: b92224b818ee2664599591280148d402, type: 3}
       propertyPath: m_SizeDelta.x

@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class MinigameManagaer : MonoBehaviour
 {
-    public GameObject[] symbols;
+    public List<GameObject> symbols;
     GameObject symbol;
-    public List<string> foods = new List<string>();
+    public List<GameObject> foods;
     public Bowl bowl;
     public GameObject cross;
-
-    bool correct = false;
+    public GameObject TimerController;
+    public CountdownScript countdownScript;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +24,24 @@ public class MinigameManagaer : MonoBehaviour
     {
         if (bowl.food != null)
         {
-            string name = bowl.food.gameObject.ToString();
-            int index = foods.IndexOf(name);
-            if (index == Array.IndexOf(symbols, symbol))
+            GameObject food = bowl.food.gameObject;
+            int index = symbols.IndexOf(symbol);
+            int index1 = foods.IndexOf(food);
+            if (index == index1)
             {
+                foods.Remove(food);
+                Destroy(food.gameObject);
+                symbol.SetActive(false);
+                symbols.Remove(symbol);
+                TimerController.SetActive(true);
+                countdownScript.Reset();
+                --countdownScript.mainTimer;
                 NewFood();
             }
             else
             {
+                DragAndDrop dragAndDrop = food.GetComponent<DragAndDrop>();
+                dragAndDrop.selectable = true;
                 cross.SetActive(true);
             }
         }
@@ -43,7 +53,11 @@ public class MinigameManagaer : MonoBehaviour
 
     void NewFood()
     {
-        int index = UnityEngine.Random.Range(1, symbols.Length);
+        int index = UnityEngine.Random.Range(0, symbols.Count);
+        if (symbols.Count == 0)
+        {
+            index = 0;
+        }
 
         symbols[index].SetActive(true);
         symbol = symbols[index];
