@@ -1,10 +1,13 @@
- using UnityEngine;
- using System.Collections;
+using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
   
  public class MenuAppearScript : MonoBehaviour {
     
     public GameObject menu; // Assign in inspector
-    private bool isShowing = true;
+    public bool isShowing = true;
+    bool shown = true;
+    public GameObject tabForInventory;
 
     private void Start()
     {
@@ -12,9 +15,24 @@
     }
 
     void Update() {
-         if (Input.GetKeyDown("tab")) {
-             isShowing = !isShowing;
-             menu.SetActive(isShowing);
-         }
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name != "DragAndDrop" || scene.name != "MainMenu")
+        {
+            if (Input.GetKeyDown("tab"))
+            {
+                shown = false;
+                isShowing = !isShowing;
+                menu.SetActive(isShowing);
+            }
+        }
+        else if (scene.name == "DragAndDrop" || scene.name == "MainMenu") {
+            menu.SetActive(false);
+        }
+
+        if (!shown)
+        {
+            tabForInventory.SetActive(false);
+        }
      }
  }

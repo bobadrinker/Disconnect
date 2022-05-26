@@ -21,10 +21,10 @@ public class LoadNewArea : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
 
-        if (history == null)
+        /*if (history == null)
         {
             history = GameObject.FindGameObjectWithTag("SceneHistory").GetComponent<SceneHistory>();
-        }
+        }*/
     }
 
     void OnTriggerEnter2D(Collider2D other) {

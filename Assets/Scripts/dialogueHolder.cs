@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class dialogueHolder : MonoBehaviour
 {
     public string dialogue;
     private DialogueManager dMAn;
 
+    public string[] names;
     public string[] dialogueLines;
     bool inRange;
-    public GameObject image;
+    //public Image[] image;
     public GameObject icon;
 
     // Start is called before the first frame update
@@ -25,8 +27,9 @@ public class dialogueHolder : MonoBehaviour
         {
             if (!dMAn.dialogueActive && !dMAn.dismissedThisFrame)
             {
-                dMAn.image = image;
+                //dMAn.dBoxImages = image;
                 dMAn.dialogLines = dialogueLines;
+                dMAn.names = names;
                 dMAn.currentLine = 0;
                 dMAn.ShowDialogue();
             }
@@ -40,7 +43,7 @@ public class dialogueHolder : MonoBehaviour
         if(other.gameObject.name == "Player")
         {
             inRange = true;
-            icon.SetActive(true);
+            //icon.SetActive(true);
         }
     }
 

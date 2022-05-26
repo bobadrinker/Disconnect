@@ -5,29 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class DisableOnLoad : MonoBehaviour
 {
-    public string[] levels;
+    public GameObject[] gameObjects;
+    private static bool gameObjectExists;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if (!gameObjectExists)
+        {
+            gameObjectExists = true;
+            DontDestroyOnLoad(this.gameObject);
+        } else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
-        foreach (string level in levels)
+        if (scene.name == "MainMenu" || scene.name == "DragAndDrop")
         {
-            if (level == scene.name)
+            foreach (GameObject game in gameObjects)
             {
-                gameObject.SetActive(false);
-                //Cursor.lockState = CursorLockMode.None;
+                game.SetActive(false);
             }
-            else
+        }
+        else
+        {
+            foreach (GameObject game in gameObjects)
             {
-                gameObject.SetActive(true);
-                //Cursor.lockState = CursorLockMode.Locked;
+                game.SetActive(true);
             }
         }
     }

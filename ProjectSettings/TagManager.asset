@@ -8,11 +8,13 @@ TagManager:
   - menuSelectSound
   - SceneHistory
   - SpawnPoint
+  - Enemy
+  - Bowl
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Inventory Layer
   - Water
   - UI
   - 

@@ -6,63 +6,51 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public GameObject text;
+
+    public Text name;
     public Text dText;
     public GameObject image;
+    public Image dBox;
     public Animator anim;
 
     public bool dialogueActive;
     public bool dismissedThisFrame;
 
     public string[] dialogLines;
+    public string[] names;
+    public Image[] dBoxImages;
+
     public int currentLine;
     public float typingSpeed;
 
     private PlayerController thePlayer;
-
-    bool textScrolling = false;
-    GameObject sound;
-
-    Image[] dBoxImages;
-
-    public AudioSource typing;
+    public GameObject minimap;
 
     // Start is called before the first frame update
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
+        //menuAppear = FindObjectOfType<MenuAppearScript>();
 
-        dBoxImages = GetComponentsInChildren<Image>();
+        //dBoxImages = GetComponentsInChildren<Image>();
         TurnOffDBox();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //error happening here after dialogue ends because current line becomes equal
-        //to 4 and that is not in the array
-
-        /*if(dText.text == dialogLines[currentLine] || dText.text == "")
+        if (dialogueActive && Input.GetKeyUp(KeyCode.Space))
         {
-            textScrolling = true;
-            Debug.Log("text is scrolling");
+            currentLine++;
+            dText.text = "";
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(dialogLines[currentLine]));
         }
-        else if (currentLine == dialogLines.Length)
-        {
-            return;
-        }
-        else
-        {
-            textScrolling = false;
-            Debug.Log("text is not scrolling");
-        }*/
 
-        if (currentLine >= dialogLines.Length)
+        if(currentLine >= dialogLines.Length)
         {
-            Debug.Log("sfsgg");
-
             anim.SetBool("inDialogue", false);
-            image.GetComponent<Image>().enabled = false;
+            //dBoxImages.GetComponent<Image>().enabled = false;
             //dBox.SetActive(false);
             TurnOffDBox();
 
@@ -72,22 +60,6 @@ public class DialogueManager : MonoBehaviour
 
             currentLine = 0;
             thePlayer.canMove = true;
-        } 
-        else
-        {
-            if (dialogueActive && Input.GetKeyUp(KeyCode.Space))
-            {
-                currentLine++;
-                dText.text = "";
-                StopAllCoroutines();
-                try
-                {
-                    StartCoroutine(TypeSentence(dialogLines[currentLine]));
-                } catch (System.Exception e)
-                {
-                    Debug.Log(e);
-                }
-            }
         }
     }
 
@@ -125,35 +97,110 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    bool playScrolling = false;
-
     IEnumerator TypeSentence (string sentence)
     {
         dText.text = "";
+        name.text = names[currentLine];
+        if (names[currentLine] == "Mum")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 0)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+        else if (names[currentLine] == "Player")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 1)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+        else if (names[currentLine] == "Player confused")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 2)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+        else if (names[currentLine] == "Player worried")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 3)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+        else if (names[currentLine] == "Player sad")
+        {
+            for (int i = 0; i < dBoxImages.Length; i++)
+            {
+                if (i == 4)
+                {
+                    dBoxImages[i].enabled = true;
+                }
+                else
+                {
+                    dBoxImages[i].enabled = false;
+                }
+            }
+        }
+
         foreach (char letter in sentence.ToCharArray())
         {
-            typing.Play();
             dText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-        typing.Stop();
     }
 
     void TurnOffDBox()
     {
+        dBox.enabled = false;
+        name.gameObject.SetActive(false);
         text.SetActive(false);
         for (int i = 0; i < dBoxImages.Length; i++)
         {
             dBoxImages[i].enabled = false;
         }
+        minimap.SetActive(true);
     }
 
     void TurnOnDBox()
     {
+        //menuAppear.isShowing = false;
+        dBox.enabled = true;
         text.SetActive(true);
+        name.gameObject.SetActive(true);
         for (int i = 0; i < dBoxImages.Length; i++)
         {
             dBoxImages[i].enabled = true;
         }
+        minimap.SetActive(false);
     }
 }

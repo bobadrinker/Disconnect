@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
 
     public int lastScene = 0;
 
+    private DialogueManager dMAn;
+    public string[] names;
+    public string[] dialogueLines;
+
     private void Awake()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -42,7 +46,13 @@ public class PlayerController : MonoBehaviour
             Destroy (gameObject);
         }
 
-        canMove = true; 
+        canMove = true;
+
+        dMAn = FindObjectOfType<DialogueManager>();
+        dMAn.dialogLines = dialogueLines;
+        dMAn.names = names;
+        dMAn.currentLine = 0;
+        dMAn.ShowDialogue();
     }
 
     // Update is called once per frame
@@ -105,16 +115,19 @@ public class PlayerController : MonoBehaviour
         {
             case 0:
                 transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[0].transform.position;
+                GameManager.gm.spawnPoint = FindObjectOfType<SpawnPointManager>().spawnPoints[0];
                 return;
             case 1:
                 transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[1].transform.position;
-                Debug.Log(FindObjectOfType<SpawnPointManager>().spawnPoints[1].transform.position);
+                GameManager.gm.spawnPoint = FindObjectOfType<SpawnPointManager>().spawnPoints[1];
                 return;
             case 2:
                 transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[2].transform.position;
+                GameManager.gm.spawnPoint = FindObjectOfType<SpawnPointManager>().spawnPoints[2];
                 return;
             case 3:
                 transform.position = FindObjectOfType<SpawnPointManager>().spawnPoints[3].transform.position;
+                GameManager.gm.spawnPoint = FindObjectOfType<SpawnPointManager>().spawnPoints[3];
                 return;
         }
         
