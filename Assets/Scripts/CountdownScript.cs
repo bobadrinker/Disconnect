@@ -40,6 +40,6 @@ public class CountdownScript : MonoBehaviour
 
     void GameOver()
     {
-        SceneManager.LoadScene("KitchenAfter");
+        SceneManager.LoadScene("Kitchen");
     }
 }
