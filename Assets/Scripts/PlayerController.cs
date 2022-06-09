@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     public string[] names;
     public string[] dialogueLines;
 
+    float speed = 0;
+    public AudioSource bedroomFootsteps;
+
     private void Awake()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        bedroomFootsteps.Stop();
         anim = GetComponent<Animator>();
 
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -68,6 +72,19 @@ public class PlayerController : MonoBehaviour
             myRigidbody.velocity = Vector2.zero;
             anim.Play("Player_Idle");
             return;
+        }
+
+        speed = myRigidbody.velocity.magnitude;
+        if (scene.name == "house_inside")
+        {
+            if (speed > 0 && bedroomFootsteps.isPlaying == false)
+            {
+                bedroomFootsteps.Play();
+            }
+            else if (speed == 0)
+            {
+                bedroomFootsteps.Stop();
+            }
         }
 
         /*if(Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
