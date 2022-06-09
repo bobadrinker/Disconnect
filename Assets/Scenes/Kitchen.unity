@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6272490126789331044, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7342055
+      value: 3.55
       objectReference: {fileID: 0}
     - target: {fileID: 6272490126789331044, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -560,6 +560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sprite base
       objectReference: {fileID: 0}
+    - target: {fileID: 6272490126789331067, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8f41a967a8c276247984cee5352fc237, type: 3}
     - target: {fileID: 6272490127993254639, guid: 27a0be2fa2e62d44ebb5a56986bb8d5f, type: 3}
       propertyPath: names.Array.size
       value: 14
@@ -814,7 +818,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ed56fa22b2b3be04894f2e165ee3f0a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a306aa1e1b081a48ab8d9f2d54cb7ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

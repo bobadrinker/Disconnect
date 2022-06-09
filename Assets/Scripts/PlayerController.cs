@@ -58,7 +58,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!canMove)
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "KitchenAfter")
+        {
+            anim.SetBool("afterMinigame", true);
+        }
+        if (!canMove && scene.name != "KitchenAfter")
         {
             myRigidbody.velocity = Vector2.zero;
             anim.Play("Player_Idle");
