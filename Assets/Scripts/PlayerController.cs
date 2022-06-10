@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     float speed = 0;
     public AudioSource bedroomFootsteps;
+    public AudioSource hallwayFootsteps;
 
     private void Awake()
     {
@@ -84,6 +85,17 @@ public class PlayerController : MonoBehaviour
             else if (speed == 0)
             {
                 bedroomFootsteps.Stop();
+            }
+        }
+        else if (scene.name == "Hallway")
+        {
+            if (speed > 0 && hallwayFootsteps.isPlaying == false)
+            {
+                hallwayFootsteps.Play();
+            }
+            else if (speed == 0)
+            {
+                hallwayFootsteps.Stop();
             }
         }
 

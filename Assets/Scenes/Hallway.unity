@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 448905038}
   - component: {fileID: 448905039}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: eerie corridor musica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1844,7 +1844,7 @@ GameObject:
   - component: {fileID: 791108696}
   - component: {fileID: 791108697}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: hallway ambience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
