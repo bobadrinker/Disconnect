@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
                 bedroomFootsteps.Stop();
             }
         }
-        else if (scene.name == "Hallway")
+        else if (scene.name == "Hallway" || scene.name == "Kitchen")
         {
             if (speed > 0 && hallwayFootsteps.isPlaying == false)
             {
