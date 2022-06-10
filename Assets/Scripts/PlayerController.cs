@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+    private bool playerMoving;
+
     public int lastScene = 0;
 
     private DialogueManager dMAn;
@@ -30,6 +32,10 @@ public class PlayerController : MonoBehaviour
     float speed = 0;
     public AudioSource bedroomFootsteps;
     public AudioSource hallwayFootsteps;
+
+    float inputHorizontal;
+    float inputVertical;
+    public bool facingRight = true;
 
     private void Awake()
     {
@@ -63,15 +69,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerMoving = false;
+
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "KitchenAfter")
-        {
-            anim.SetBool("afterMinigame", true);
-        }
-        if (!canMove && scene.name != "KitchenAfter")
+        if (!canMove)
         {
             myRigidbody.velocity = Vector2.zero;
-            anim.Play("Player_Idle");
+            anim.SetBool("inDialogue", false);
             return;
         }
 
@@ -121,12 +125,17 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        anim.SetBool("PlayerMoving", playerMoving);
+        inputHorizontal = Input.GetAxisRaw("Horizontal");
+        inputVertical = Input.GetAxisRaw("Vertical");
+
 
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
         if(moveInput != Vector2.zero)
         {
             myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+            playerMoving = true;
 
         } else
         {
@@ -141,6 +150,16 @@ public class PlayerController : MonoBehaviour
         {
             currentMoveSpeed = moveSpeed;
         }*/
+
+        if (inputHorizontal > 0)
+        {
+            //Flip();
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (inputHorizontal < 0)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -165,5 +184,14 @@ public class PlayerController : MonoBehaviour
                 return;
         }
         
+    }
+
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        facingRight = !facingRight;
     }
 }
